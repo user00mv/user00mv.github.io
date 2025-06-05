@@ -1,0 +1,1482 @@
+/* === RESET & GLOBAL === */
+/* Zajistí plynulé posouvání při kliknutí na kotvy */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Resetuje výchozí okraje a paddingy, nastavuje box-sizing na border-box */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Základní styly pro tělo stránky */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f1f1f1;
+  color: #2b2b2b;
+  line-height: 1.6;
+}
+
+/* Nastavuje obrázky na maximální šířku a blokové zobrazení */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Odstraní podtržení odkazů a nastaví výchozí barvu */
+a {
+  text-decoration: none;
+  color: #72826e;
+}
+
+/* Styly pro nadpisy h2 a h3 */
+h2, h3 {
+  margin-bottom: 0.5em;
+  font-family: 'the-seasons', sans-serif;
+}
+
+/* Styly pro odstavce */
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* === NAVBAR === */
+/* Styly pro navigační lištu */
+.navbar {
+  background-color: #fff;
+  border-bottom: 3px solid #72826e;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Kontejner pro obsah navigační lišty */
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+/* Styly pro logo v navigaci */
+.navbar__logo img {
+  height: 60px;
+}
+
+/* Styly pro navigační odkazy */
+.navbar__nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Styly pro jednotlivé odkazy v navigaci */
+.navbar__nav a {
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Efekt při najetí na odkaz v navigaci */
+.navbar__nav a:hover {
+  color: #90a88f;
+}
+
+/* Styly pro odznak TripAdvisor v navigaci */
+.navbar__award img {
+  height: 70px;
+}
+
+/* Tlačítko hamburger menu (skryté na větších obrazovkách) */
+.navbar__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #72826e;
+}
+
+/* === HERO HEADER === */
+/* Styly pro hlavní banner (hero sekci) */
+.hero-header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('../media/header.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  color: white;
+}
+
+/* Překryv pro hero sekci s poloprůhledným pozadím */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Obsah hero sekce (nadpis, text, tlačítko) */
+.hero-content {
+  text-align: center;
+  max-width: 700px;
+  z-index: 5;
+  animation: fadeInUp 1.2s ease-out both;
+}
+
+/* Styl pro nadpis v hero sekci */
+.hero-content h1 {
+  font-size: 3rem;
+  font-family: 'the-seasons', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Styl pro podnadpis v hero sekci */
+.hero-content p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+/* Styl pro primární tlačítko */
+.btn-primary {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #72826e;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Efekt při najetí na primární tlačítko */
+.btn-primary:hover {
+  background-color: #5a6b57; /* Tmavší odstín pro hover efekt */
+}
+
+/* === LEAF STYLING === */
+/* Kontejner pro dekorativní lístky v hero sekci */
+.leaf-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* Základní styly pro lístky */
+.leaf {
+  width: 250px; /* Větší lístky */
+  height: auto;
+  position: absolute;
+  user-select: none; /* Zamezí výběru při přesouvání */
+}
+
+/* Styl a animace pro levý lístek */
+.leaf-left {
+  top: 50%; /* Startovací pozice nad nadpisem */
+  left: -250px; /* Začíná mimo obrazovku vlevo */
+  transform: rotate(15deg); /* Statické naklonění */
+  animation: flyOverLeft 2s ease-in-out forwards;
+}
+
+/* Styl a animace pro pravý lístek */
+.leaf-right {
+  top: 55%; /* Lehce pod levým lístkem */
+  left: -250px; /* Začíná mimo obrazovku vlevo */
+  transform: rotate(-15deg); /* Statické naklonění */
+  animation: flyOverLeft 2s ease-in-out 0.2s forwards; /* O 0.2s zpoždění */
+}
+
+/* Styl a animace pro horní lístek */
+.leaf-top {
+  top: 50%; /* Startovací pozice nad nadpisem */
+  right: -250px; /* Začíná mimo obrazovku vpravo */
+  transform: rotate(10deg); /* Statické naklonění */
+  animation: flyOverRight 2s ease-in-out forwards;
+}
+
+/* Styl a animace pro dolní lístek */
+.leaf-bottom {
+  top: 55%; /* Lehce pod horním lístkem */
+  right: -250px; /* Začíná mimo obrazovku vpravo */
+  transform: rotate(-10deg); /* Statické naklonění */
+  animation: flyOverRight 2s ease-in-out 0.2s forwards; /* O 0.2s zpoždění */
+}
+
+/* Skrytí lístků po dokončení animace */
+.leaf-hidden {
+  display: none; /* Kompletní zmizení */
+}
+
+/* === ANIMACE === */
+/* Animace pro pozvolné zobrazení a posun nahoru */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animace pro pozvolné zobrazení */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animace pro zvětšení při najetí */
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* Animace přeletu lístků zleva přes střed */
+@keyframes flyOverLeft {
+  0% {
+    transform: translateX(0) rotate(15deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(calc(50vw - 125px)) rotate(15deg); /* Střed obrazovky */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) rotate(15deg); /* Odletí doprava */
+    opacity: 0; /* Zmizí */
+  }
+}
+
+/* Animace přeletu lístků zprava přes střed */
+@keyframes flyOverRight {
+  0% {
+    transform: translateX(0) rotate(10deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(calc(-50vw + 125px)) rotate(10deg); /* Střed obrazovky */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100vw) rotate(10deg); /* Odletí doleva */
+    opacity: 0; /* Zmizí */
+  }
+}
+
+/* === SEKCE === */
+/* Základní styly pro sekce stránky */
+.section {
+  padding: 2rem;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Hlavička sekcí */
+.section__header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #72826e;
+  color: #f1f1f1;
+  padding: 1.5rem;
+  margin-bottom: 4rem;
+  margin-top: -33px;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  width: calc(100% + 4rem);
+}
+
+/* Styl pro nadpisy v hlavičkách sekcí */
+.section__header h2 {
+  font-size: 2.5rem; /* Větší nadpisy sekcí */
+}
+
+/* Styl pro dekorativní obrázek v hlavičce sekce */
+.section__img {
+  width: 358px;
+  height: 100px;
+}
+
+/* === POKOJE (CLASSIC ROOM CARDS) === */
+/* Mřížka pro klasické pokoje */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styl pro kartu pokoje */
+.room-card {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: auto;
+}
+
+/* Efekt při najetí na kartu pokoje */
+.room-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Styl pro obrázek v kartě pokoje */
+.room-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Obsah karty pokoje */
+.room-card__content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Nadpis v kartě pokoje */
+.room-card__content h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+/* Popis v kartě pokoje */
+.room-card__content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Informace o vybavení pokoje */
+.room-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #72826e;
+}
+
+/* Ikonky v informacích o pokoji */
+.room-info i {
+  margin-right: 6px;
+}
+
+/* Tlačítko v kartě pokoje */
+.room-card .btn {
+  display: inline-block;
+  background-color: #72826e;
+  color: white;
+  padding: 0.6rem 1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 0;
+}
+
+/* Efekt při najetí na tlačítko v kartě pokoje */
+.room-card .btn:hover {
+  background-color: #90a88f;
+}
+
+/* === CAROUSEL SECTION === */
+/* Kontejner pro karusel prémiových pokojů */
+.carousel-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+  overflow: hidden;
+}
+
+/* Kontejner pro posuvnou část karuselu */
+.carousel-track-container {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Posuvná část karuselu */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Styl pro jednotlivý slide v karuselu */
+.carousel-slide {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 300px;
+  margin: 0 1rem;
+  opacity: 0.3;
+}
+
+/* Aktivní slide v karuselu */
+.carousel-slide.current-slide {
+  opacity: 1;
+}
+
+/* Efekt při najetí na slide */
+.carousel-slide:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Obrázek v karuselu */
+.carousel-slide img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Obsah karty v karuselu */
+.carousel-slide .room-card__content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Nadpis v kartě karuselu */
+.carousel-slide .room-card__content h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+/* Popis v kartě karuselu */
+.carousel-slide .room-card__content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Informace o vybavení v karuselu */
+.carousel-slide .room-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #72826e;
+}
+
+/* Ikonky v informacích karuselu */
+.carousel-slide .room-info i {
+  margin-right: 6px;
+}
+
+/* Tlačítko v kartě karuselu */
+.carousel-slide .btn {
+  display: inline-block;
+  background-color: #72826e;
+  color: white;
+  padding: 0.6rem 1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 0;
+}
+
+/* Efekt při najetí na tlačítko v karuselu */
+.carousel-slide .btn:hover {
+  background-color: #90a88f;
+}
+
+/* Styl pro odpočet v karuselu */
+.slide-countdown {
+  background: #e6ece5;
+  padding: 0.5rem;
+  color: #2b2b2b;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  border-radius: 0;
+}
+
+/* Ikonka v odpočtu */
+.slide-countdown i {
+  margin-right: 6px;
+}
+
+/* Styl pro odpočet */
+#countdown {
+  font-size: 1.2rem;
+  color: #2b2b2b;
+}
+
+/* Zobrazení ceny a hodnocení */
+.price-rating {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Ikonka hvězdičky v hodnocení */
+.price-rating .rating i {
+  color: #f39c12;
+}
+
+/* Styly pro navigační tlačítka karuselu */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #72826e;
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  border-radius: 0;
+}
+
+/* Efekt při najetí na tlačítko karuselu */
+.carousel-btn:hover {
+  background-color: #90a88f;
+}
+
+/* Umístění tlačítka "předchozí" */
+.carousel-btn.prev {
+  left: 0;
+}
+
+/* Umístění tlačítka "další" */
+.carousel-btn.next {
+  right: 0;
+}
+
+/* === FAQ === */
+/* Kontejner pro FAQ sekci */
+.faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styl pro jednotlivou položku FAQ */
+.faq-item {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+}
+
+/* Styl pro otázku v FAQ */
+.faq-question {
+  background: #72826e;
+  color: #fff;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 0;
+}
+
+/* Efekt při najetí na otázku v FAQ */
+.faq-question:hover {
+  background-color: #90a88f;
+}
+
+/* Styl pro odpověď v FAQ (skrytá) */
+.faq-answer {
+  display: none;
+  padding: 1rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* === RESTAURANTS & BARS === */
+/* Kontejner pro seznam restaurací a barů */
+.restaurants-list {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styl pro položku restaurace */
+.restaurant-item {
+  margin-bottom: 2rem;
+  opacity: 0;
+}
+
+/* Animace pro zobrazení položky restaurace */
+.restaurant-item.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Kontejner pro média a obsah restaurace */
+.restaurant-media {
+  display: flex;
+  align-items: center;
+  background: #e6ece5;
+  padding: 1.5rem;
+  border-left: 4px solid #72826e;
+  transition: background 0.3s ease;
+  border-radius: 0;
+}
+
+/* Efekt při najetí na položku restaurace */
+.restaurant-media:hover {
+  background: #d5e0d3;
+}
+
+/* Obrázek v položce restaurace */
+.restaurant-media img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 2rem;
+}
+
+/* Obsah položky restaurace */
+.restaurant-content {
+  flex: 1;
+}
+
+/* Nadpis v položce restaurace */
+.restaurant-content h3 {
+  font-size: 1.6rem;
+  color: #2b2b2b;
+}
+
+/* Popis v položce restaurace */
+.restaurant-content p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Informace o restauraci */
+.restaurant-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #72826e;
+  margin-bottom: 1rem;
+}
+
+/* Ikonky v informacích o restauraci */
+.restaurant-info i {
+  margin-right: 6px;
+}
+
+/* Odkazy na otevírací dobu a menu */
+.hours-link, .menu-link {
+  color: #72826e;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+  margin-right: 1rem;
+}
+
+/* Efekt při najetí na odkazy */
+.hours-link:hover, .menu-link:hover {
+  color: #90a88f;
+}
+
+/* Styl pro zobrazení otevírací doby */
+.hours-info {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  color: #2b2b2b;
+  font-size: 0.9rem;
+  border-left: 2px solid #72826e;
+  border-radius: 0;
+}
+
+/* === SPORT & ENTERTAINMENT === */
+/* Styl pro sekci sportu a zábavy */
+.sport-section {
+  background: #f8f9f8;
+}
+
+/* Mřížka pro aktivity */
+.sport-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styl pro kartu aktivity */
+.sport-card {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+  opacity: 0;
+}
+
+/* Animace pro zobrazení karty aktivity */
+.sport-card.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Překryv pro kartu aktivity */
+.sport-card__overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Obrázek v kartě aktivity */
+.sport-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+  transition: opacity 0.3s ease;
+}
+
+/* Nadpis v kartě aktivity */
+.sport-card__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Obsah karty aktivity (zobrazený při najetí) */
+.sport-card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Popis v kartě aktivity */
+.sport-card__content p {
+  font-size: 0.95rem;
+  color: #2b2b2b;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Informace o aktivitě */
+.sport-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #72826e;
+  justify-content: center;
+}
+
+/* Ikonky v informacích o aktivitě */
+.sport-info i {
+  margin-right: 6px;
+}
+
+/* Hover efekty pro kartu aktivity */
+.sport-card:hover .sport-card__img {
+  opacity: 0;
+}
+
+.sport-card:hover .sport-card__title {
+  opacity: 0;
+}
+
+.sport-card:hover .sport-card__content {
+  opacity: 1;
+}
+
+/* === RECENZE === */
+/* Kontejner pro recenze */
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styl pro kartu recenze */
+.review-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 250px;
+}
+
+/* Efekt při najetí na kartu recenze */
+.review-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Hlavička recenze */
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Avatar v recenzi */
+.review-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Nadpis v recenzi */
+.review-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Hvězdičky v hodnocení */
+.review-rating i {
+  color: #f39c padres12;
+  margin-right: 2px;
+}
+
+/* Text recenze */
+.review-text {
+  margin-top: 1rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* === REZERVACE === */
+/* Styl pro rezervační formulář */
+.rezervacni-formular {
+  max-width: 600px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 0;
+}
+
+/* Skupina formulářových polí */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Popisky formulářových polí */
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Vstupní pole a select */
+.form-group input,
+.form-group select {
+  padding: 0.75rem;
+  border: 2px solid #72826e;
+  border-radius: 0;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Efekt při aktivaci vstupního pole nebo selectu */
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #90a88f;
+  box-shadow: 0 0 8px rgba(144, 168, 143, 0.3);
+  transform: scale(1.02);
+}
+
+/* Styl pro select */
+.form-group select {
+  padding: 0.5rem;
+  position: relative;
+}
+
+/* Styl pro option v selectu */
+.form-group select option {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Zobrazení ceny a počtu nocí */
+.price-display {
+  background: #e6ece5;
+  padding: 1rem;
+  border-radius: 0;
+  text-align: center;
+  font-size: 1rem;
+  color: #2b2b2b;
+}
+
+/* Styl pro text v zobrazení ceny */
+.price-display p {
+  margin: 0.5rem 0;
+}
+
+/* Styl pro hodnoty v zobrazení ceny */
+.price-display span {
+  font-weight: 700;
+  color: #72826e;
+}
+
+/* Tlačítko formuláře */
+.rezervacni-formular .btn {
+  background-color: #72826e;
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 0;
+}
+
+/* Efekt při najetí na tlačítko formuláře */
+.rezervacni-formular .btn:hover {
+  background-color: #90a88f;
+  transform: scale(1.05);
+  animation: scaleUp 0.3s ease;
+}
+
+/* Kontejner pro kontaktní informace */
+.kontakt-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease;
+}
+
+/* Styl pro kontaktní blok */
+.kontakt-block {
+  background-color: #f7f7f7;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 12px #72826e;
+  flex: 1 1 280px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efekt při najetí na kontaktní blok */
+.kontakt-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px #72826e;
+}
+
+/* Ikonky v kontaktním bloku */
+.kontakt-block i {
+  font-size: 2rem;
+  color: #72826e;
+  min-width: 40px;
+}
+
+/* Nadpis v kontaktním bloku */
+.kontakt-block h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Text v kontaktním bloku */
+.kontakt-block p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Styl pro mapu v kontaktní sekci */
+.kontakt-map {
+  max-width: 1900px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* === FOOTER === */
+/* Styl pro patičku stránky */
+.footer {
+  background-color: #72826e;
+  color: white;
+  padding: 3rem 2rem;
+}
+
+/* Kontejner pro obsah patičky */
+.footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styly pro sekce v patičce */
+.footer__links,
+.footer__contact,
+.footer__social {
+  flex: 1 1 200px;
+}
+
+/* Nadpisy v patičce */
+.footer h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Seznam odkazů v patičce */
+.footer__links ul {
+  list-style: none;
+}
+
+/* Položky v seznamu odkazů */
+.footer__links li {
+  margin-bottom: 0.5rem;
+}
+
+/* Odkazy v patičce */
+.footer__links a,
+.footer__contact a {
+  color: #f1f1f1;
+  transition: color 0.3s ease;
+}
+
+/* Efekt při najetí na odkazy v patičce */
+.footer__links a:hover,
+.footer__contact a:hover {
+  color: #90a88f;
+}
+
+/* Ikonky sociálních sítí */
+.footer__social a {
+  color: #f1f1f1;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+/* Efekt při najetí na ikonky sociálních sítí */
+.footer__social a:hover {
+  color: #90a88f;
+}
+
+/* Dolní část patičky s copyrightem */
+.footer__bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #90a88f;
+  margin-top: 2rem;
+}
+
+/* === RESPONSIVITA === */
+/* Styly pro tablety */
+@media (max-width: 1024px) {
+  .navbar__container {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar__nav {
+    gap: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .room-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .carousel-slide {
+    flex: 0 0 250px;
+  }
+
+  .restaurant-media img {
+    width: 200px;
+    height: 120px;
+  }
+
+  .sport-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .sport-card {
+    height: 200px;
+  }
+
+  .section__header h2 {
+    font-size: 2rem; /* Větší nadpisy i na tabletu */
+  }
+
+  /* Menší lístky na tabletu */
+  .leaf {
+    width: 200px;
+  }
+}
+
+/* Styly pro mobily */
+@media (max-width: 768px) {
+  .navbar__container {
+    padding: 1rem;
+  }
+
+  /* Skrytí navigačního menu na mobilu */
+  .navbar__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Zobrazení menu při aktivaci */
+  .navbar__nav.active {
+    display: flex;
+  }
+
+  /* Styly pro odkazy v mobilním menu */
+  .navbar__nav a {
+    padding: 0.8rem 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+
+  /* Zobrazení hamburger menu */
+  .navbar__hamburger {
+    display: block;
+  }
+
+  /* Menší odznak TripAdvisor */
+  .navbar__award img {
+    height: 50px;
+  }
+
+  /* Menší hero sekce na mobilu */
+  .hero-header {
+    height: 70vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    padding: 0.7rem 1.6rem;
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 1rem;
+  }
+
+  .section__header {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    width: calc(100% + 2rem);
+  }
+
+  .section__header h2 {
+    font-size: 1.8rem; /* Větší nadpisy i na mobilu */
+  }
+
+  /* Jednosloupcová mřížka pro pokoje */
+  .room-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-container {
+    padding: 0 30px;
+  }
+
+  .carousel-slide {
+    flex: 0 0 200px;
+  }
+
+  .carousel-slide img {
+    height: 150px;
+  }
+
+  /* Vertikální zobrazení restaurací */
+  .restaurant-media {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .restaurant-media img {
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+
+  /* Jednosloupcová mřížka pro aktivity */
+  .sport-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sport-card {
+    height: 200px;
+  }
+
+  /* Vertikální zobrazení recenzí */
+  .reviews {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .review-card {
+    flex: 1 1 100%;
+  }
+
+  /* Menší padding pro formulář */
+  .rezervacni-formular {
+    padding: 1.5rem;
+  }
+
+  /* Vertikální zobrazení patičky */
+  .footer__container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer__links,
+  .footer__contact,
+  .footer__social {
+    flex: 1 1 100%;
+  }
+
+  /* Menší lístky na mobilu */
+  .leaf {
+    width: 150px;
+  }
+}
+
+/* Styly pro notebooky (1025px–1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .navbar__container {
+    padding: 1rem 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .room-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .carousel-slide {
+    flex: 0 0 280px;
+  }
+
+  .sport-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* === STYLING STRÁNKY POKOJE === */
+/* Styl pro detailní stránku pokoje */
+.room-detail {
+  padding: 120px 20px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+/* Nadpis na stránce pokoje */
+.room-detail__title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Popis na stránce pokoje */
+.room-detail__description {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Ikonky vybavení pokoje */
+.room-detail__icons {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  font-size: 1rem;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Styl pro jednotlivé ikonky vybavení */
+.room-detail__icons div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+/* Styl pro ikonky */
+.room-detail__icons i {
+  margin-top: 10px;
+  color: #72826e;
+  font-size: 1.3rem;
+}
+
+/* Galerie obrázků pokoje */
+.room-detail__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Obrázky v galerii */
+.room-detail__gallery img {
+  width: 100%;
+  object-fit: cover;
+  height: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Efekt při najetí na obrázek v galerii */
+.room-detail__gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Sekce s tlačítkem pro rezervaci */
+.room-detail__cta {
+  margin-top: 40px;
+  margin-bottom: 80px; /* Přidaný prostor pod tlačítkem */
+  text-align: center;
+}
+
+/* Tlačítko pro rezervaci */
+.btn-reserve {
+  background-color: #72826e; /* Zelená barva z navbaru */
+  color: white;
+  padding: 14px 36px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px #72826e;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+/* Efekt při najetí na tlačítko rezervace */
+.btn-reserve:hover {
+  background-color: #90a88f; /* Světlejší odstín zelené */
+  transform: scale(1.05);
+}
+
+/* Responsivita pro stránku pokoje (mobily) */
+@media (max-width: 768px) {
+  .room-detail__title {
+    font-size: 2rem;
+  }
+
+  .room-detail__icons {
+    gap: 20px;
+  }
+
+  .room-detail__gallery img {
+    height: 180px;
+  }
+}
