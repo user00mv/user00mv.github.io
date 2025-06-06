@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <!-- Definuje kódování znaků na UTF-8 -->
+  <meta charset="UTF-8" />
+  <!-- Nastavuje responzivní viewport pro různá zařízení -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Titulek stránky -->
+  <title>Hotel Konoha | Ubytování skryté v listech</title>
+  <!-- Načítá knihovnu FontAwesome pro ikonky -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" />
+  <!-- Připojuje lokální CSS soubor pro styly stránky -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Načítá externí fonty z Typekit -->
+  <link rel="stylesheet" href="https://use.typekit.net/zsl5fuw.css"> 
+  <!-- Nastavuje ikonu stránky (favicon) -->
+  <link rel="icon" type="image/png" href="media/logo.png">
+  <!-- Načítá JavaScript soubor s odloženým načítáním (defer) -->
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <!-- Integrace Elfsight chat widgetu -->
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+  <div class="elfsight-app-2446e7b7-a429-4feb-8125-1823a28d770e" data-elfsight-app-lazy></div>
+
+  <!-- Hlavička stránky (navigační lišta) -->
+  <header class="navbar">
+    <div class="navbar__container">
+      <!-- Logo hotelu s odkazem na úvodní sekci -->
+      <a href="#subheader">
+        <div class="navbar__logo">
+          <img src="media/logo.png" alt="Logo Hotelu">
+        </div>
+      </a>
+      <!-- Navigační menu s odkazy na jednotlivé sekce -->
+      <nav class="navbar__nav">
+        <a href="#subheader">Domů</a>
+        <a href="#pokoje">Ubytování</a>
+        <a href="#restaurants">Restaurace a bary</a>
+        <a href="#sport">Sport a zábava</a>
+        <a href="#faq">FAQ</a>
+        <a href="#recenze">Recenze</a>
+        <a href="#rezervace">Rezervovat</a>
+      </nav>
+      <!-- Odznak TripAdvisor pro rok 2024 -->
+      <div class="navbar__award">
+        <img src="media/award-badge.png" alt="TripAdvisor 2024">
+      </div>
+      <!-- Tlačítko hamburger menu pro mobilní zobrazení -->
+      <button class="navbar__hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hlavní banner (hero sekce) -->
+  <section id="subheader" class="hero-header">
+    <div class="hero-overlay">
+      <!-- Kontejner pro dekorativní lístky -->
+      <div class="leaf-container">
+        <img src="media/leaf.png" alt="Leaf Left" class="leaf leaf-left">
+        <img src="media/leaf.png" alt="Leaf Right" class="leaf leaf-right">
+        <img src="media/leaf.png" alt="Leaf Top" class="leaf leaf-top">
+        <img src="media/leaf.png" alt="Leaf Bottom" class="leaf leaf-bottom">
+      </div>
+      <!-- Obsah banneru s nadpisem, podnadpisem a tlačítkem -->
+      <div class="hero-content">
+        <h1>Ubytování skryté v listech</h1>
+        <p>Nejen pobyt, ale zážitek na celý život.</p>
+        <a href="#pokoje" class="btn-primary" type="button">Chci zažít nejlepší pobyt</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sekce klasických pokojů -->
+  <section id="pokoje" class="section">
+    <!-- Hlavička sekce s názvem a dekorativním obrázkem -->
+    <div class="section__header">
+      <h2>Klasické pokoje</h2>
+      <div class="section__img">
+        <img src="media/element.png" alt="Obrázek na bloku">
+      </div>
+    </div>
+    <!-- Mřížka s kartami jednotlivých pokojů -->
+    <div class="room-grid">
+      <!-- Karta pokoje Standart -->
+      <div class="room-card">
+        <img src="media/midplusplus2.jpg" alt="Standardní pokoj">
+        <div class="room-card__content">
+          <h3>Pokoj Standart</h3>
+          <p>1× manželská postel, vlastní koupelna</p>
+          <div class="room-info">
+            <span><i class="fas fa-bed"></i> 1 postel</span>
+            <span><i class="fas fa-bath"></i> 1 koupelna</span>
+            <span><i class="fas fa-wifi"></i> Wi‑Fi zdarma</span>
+          </div>
+          <a href="html/pokoje/pokoj1.html" class="btn">Více informací</a>
+        </div>
+      </div>
+      <!-- Karta pokoje Standart+ -->
+      <div class="room-card">
+        <img src="media/junior3.webp" alt="Pokoj Standart+">
+        <div class="room-card__content">
+          <h3>Pokoj Standart+</h3>
+          <p>1× jednolůžko, výhled na moře, luxusnější než standart</p>
+          <div class="room-info">
+            <span><i class="fas fa-bed"></i> 1 postele</span>
+            <span><i class="fas fa-bath"></i> 1 koupelna</span>
+            <span><i class="fas fa-wifi"></i> Wi‑Fi zdarma</span>
+          </div>
+          <a href="html/pokoje/pokoj2.html" class="btn">Více informací</a>
+        </div>
+      </div>
+      <!-- Karta pokoje Mid -->
+      <div class="room-card">
+        <img src="media/mid+.webp" alt="Apartmá">
+        <div class="room-card__content">
+          <h3>Pokoj Mid</h3>
+          <p>Obývací pokoj, kuchyňský kout</p>
+          <div class="room-info">
+            <span><i class="fas fa-couch"></i> Obývací pokoj</span>
+            <span><i class="fas fa-utensils"></i> Kuchyňský kout</span>
+            <span><i class="fas fa-wifi"></i> Wi‑Fi zdarma</span>
+          </div>
+          <a href="html/pokoje/pokoj3.html" class="btn">Více informací</a>
+        </div>
+      </div>
+      <!-- Karta pokoje Mid+ -->
+      <div class="room-card">
+        <img src="media/mid++.webp" alt="Prezidentské apartmá">
+        <div class="room-card__content">
+          <h3>Pokoj Mid+</h3>
+          <p>Luxusní apartmá se soukromou terasou a vířivkou.</p>
+          <div class="room-info">
+            <span><i class="fas fa-bed"></i> 3 postele</span>
+            <span><i class="fas fa-bath"></i> 2 koupelny</span>
+            <span><i class="fas fa-hot-tub"></i> Vířivka</span>
+          </div>
+          <a href="html/pokoje/pokoj4.html" class="btn">Více informací</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sekce prémiových pokojů s karuselem -->
+  <section id="carousel" class="section">
+    <!-- Hlavička sekce s názvem a dekorativním obrázkem -->
+    <div class="section__header">
+      <h2>Prémiové pokoje</h2>
+      <div class="section__img">
+        <img src="media/element.png" alt="Obrázek na bloku">
+      </div>
+    </div>
+    <!-- Kontejner pro karusel -->
+    <div class="carousel-container">
+      <!-- Tlačítko předchozího snímku -->
+      <button class="carousel-btn prev"><i class="fas fa-arrow-left"></i></button>
+      <div class="carousel-track-container">
+        <ul class="carousel-track">
+          <!-- Slide 1: Deluxe Suite -->
+          <li class="carousel-slide current-slide room-card">
+            <img src="media/deluxe.webp" alt="Deluxe Suite">
+            <div class="room-card__content">
+              <h3>Deluxe Suite</h3>
+              <p>Elegantní apartmá s výhledem na město. Ideální pro romantický víkend.</p>
+              <div class="room-info">
+                <span><i class="fas fa-bed"></i> 1 postel - kingsize</span>
+                <span><i class="fas fa-bath"></i> 1 koupelna</span>
+                <span><i class="fas fa-wifi"></i> Wi-Fi zdarma</span>
+              </div>
+              <div class="price-rating">
+                <span class="price">Od 1200 Kč / noc</span>
+                <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+              </div>
+              <a href="html/pokoje/pokoj5.html" class="btn">Více informací</a>
+            </div>
+          </li>
+          <!-- Slide 2: Presidential Suite s odpočtem -->
+          <li class="carousel-slide room-card">
+            <img src="media/president.webp" alt="Presidential Suite">
+            <div class="room-card__content">
+              <h3>Presidential Suite</h3>
+              <!-- Odpočet pro speciální nabídku -->
+              <div class="slide-countdown">
+                <p><i class="fas fa-clock"></i> Výhodná nabídka končí za:</p>
+                <div id="countdown"></div>
+              </div>
+              <p>Luxusní apartmá s vířivkou a privátní terasou.</p>
+              <div class="room-info">
+                <span><i class="fas fa-bed"></i> 3 postele</span>
+                <span><i class="fas fa-bath"></i> 2 koupelny</span>
+                <span><i class="fas fa-hot-tub"></i> Vířivka</span>
+              </div>
+              <div class="price-rating">
+                <span class="price">Od 3200 Kč / noc</span>
+                <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+              </div>
+              <a href="html/pokoje/pokoj6.html" class="btn">Více informací</a>
+            </div>
+          </li>
+          <!-- Slide 3: Junior Suite -->
+          <li class="carousel-slide room-card">
+            <img src="media/junior.webp" alt="Junior Suite">
+            <div class="room-card__content">
+              <h3>Junior Suite</h3>
+              <p>Moderní pokoj s minimalistickým designem a veškerým komfortem.</p>
+              <div class="room-info">
+                <span><i class="fas fa-bed"></i> 2 postele</span>
+                <span><i class="fas fa-bath"></i> 1 koupelna</span>
+                <span><i class="fas fa-tv"></i> Smart TV</span>
+              </div>
+              <div class="price-rating">
+                <span class="price">Od 900 Kč / noc</span>
+                <span class="rating"><i class="fas fa-star"></i> 4.4</span>
+              </div>
+              <a href="html/pokoje/pokoj7.html" class="btn">Více informací</a>
+            </div>
+          </li>
+          <!-- Slide 4: Business Suite+ -->
+          <li class="carousel-slide room-card">
+            <img src="media/junior2.webp" alt="Deluxe Suite">
+            <div class="room-card__content">
+              <h3>Business Suite+</h3>
+              <p>Elegantní apartmá s výhledem na město. Ideální pro pracovní víkend.</p>
+              <div class="room-info">
+                <span><i class="fas fa-bed"></i> 2 postele</span>
+                <span><i class="fas fa-bath"></i> 1 koupelna</span>
+                <span><i class="fas fa-wifi"></i> Wi-Fi zdarma</span>
+              </div>
+              <div class="price-rating">
+                <span class="price">Od 1200 Kč / noc</span>
+                <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+              </div>
+              <a href="html/pokoje/pokoj8.html" class="btn">Více informací</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- Tlačítko dalšího snímku -->
+      <button class="carousel-btn next"><i class="fas fa-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Sekce FAQ (často kladené otázky) -->
+  <section id="faq" class="section">
+    <!-- Hlavička sekce s názvem a dekorativním obrázkem -->
+    <div class="section__header">
+      <h2>FAQ</h2>
+      <div class="section__img">
+        <img src="media/element.png" alt="Obrázek na bloku">
+      </div>
+    </div>
+    <!-- Seznam otázek a odpovědí -->
+    <div class="faq-container">
+      <!-- FAQ položka 1 -->
+      <div class="faq-item">
+        <button class="faq-question">Jaké jsou storno podmínky?</button>
+        <div class="faq-answer">
+          <p>Rezervaci lze zrušit zdarma do 48 hodin před příjezdem. Po této době účtujeme 50 % z ceny pobytu.</p>
+        </div>
+      </div>
+      <!-- FAQ položka 2 -->
+      <div class="faq-item">
+        <button class="faq-question">Jsou domácí mazlíčci povoleni?</button>
+        <div class="faq-answer">
+          <p>Ano, domácí mazlíčci jsou povoleni za poplatek 200 Kč/noc. Kontaktujte nás předem.</p>
+        </div>
+      </div>
+      <!-- FAQ položka 3 -->
+      <div class="faq-item">
+        <button class="faq-question">Nabízíte snídaně?</button>
+        <div class="faq-answer">
+          <p>Ano, snídaně formou bufetu je zahrnuta v ceně pobytu pro všechny pokoje.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sekce restaurací a barů -->
+  <section id="restaurants" class="section">
+    <!-- Hlavička sekce s názvem a dekorativním obrázkem -->
+    <div class="section__header">
+      <h2>Restaurace a bary</h2>
+      <div class="section__img">
+        <img src="media/element.png" alt="Obrázek na bloku">
+      </div>
+    </div>
+    <!-- Seznam restaurací a barů -->
+    <div class="restaurants-list">
+      <!-- Restaurace 1: Hlavní restaurace -->
+      <div class="restaurant-item fade-in">
+        <div class="restaurant-media">
+          <img src="media/restaurace.jpg" alt="Hlavní restaurace">
+          <div class="restaurant-content">
+            <h3>Hlavní restaurace</h3>
+            <p>Zažijte kulinářský zážitek s místními i mezinárodními pokrmy, připravovanými z čerstvých surovin.</p>
+            <div class="restaurant-info">
+              <span><i class="fas fa-utensils"></i> Snídaně a večeře</span>
+              <span><i class="fas fa-users"></i> Kapacita 120 osob</span>
+            </div>
+            <!-- Odkaz na zobrazení otevírací doby -->
+            <a href="#" class="hours-link">Zobrazit otevírací dobu</a>
+            <!-- Odkaz na menu -->
+            <a href="media/menu.pdf" target="_blank" class="menu-link">Menu</a>
+            <!-- Skrytý blok s otevírací dobou -->
+            <div class="hours-info" style="display: none;">
+              <p>Snídaně: 7:00–10:00<br>Večeře: 18:00–22:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Restaurace 2: Bar u bazénu -->
+      <div class="restaurant-item fade-in">
+        <div class="restaurant-media">
+          <img src="media/beachbar.jpg" alt="Bar u bazénu">
+          <div class="restaurant-content">
+            <h3>Bar u bazénu</h3>
+            <p>Osvěžující koktejly přímo u bazénu s úchvatným výhledem na moře a západ slunce.</p>
+            <div class="restaurant-info">
+              <span><i class="fas fa-cocktail"></i> Koktejly a nápoje</span>
+              <span><i class="fas fa-sun"></i> Otevřeno do západu slunce</span>
+            </div>
+            <a href="#" class="hours-link">Zobrazit otevírací dobu</a>
+            <a href="media/menu.pdf" target="_blank" class="menu-link">Menu</a>
+            <div class="hours-info" style="display: none;">
+              <p>Denně: 10:00–20:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Restaurace 3: Vinárna -->
+      <div class="restaurant-item fade-in">
+        <div class="restaurant-media">
+          <img src="media/vinarna.webp" alt="Vinárna">
+          <div class="restaurant-content">
+            <h3>Vinárna</h3>
+            <p>Degustace vybraných vín v intimním prostředí s odborným sommelierem.</p>
+            <div class="restaurant-info">
+              <span><i class="fas fa-wine-glass-alt"></i> Degustace vín</span>
+              <span><i class="fas fa-star"></i> Prémiový výběr</span>
+            </div>
+            <a href="#" class="hours-link">Zobrazit otevírací dobu</a>
+            <a href="media/menu.pdf" target="_blank" class="menu-link">Menu</a>
+            <div class="hours-info" style="display: none;">
+              <p>Čt–So: 18:00–23:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sekce sportu a zábavy -->
+  <section id="sport" class="section sport-section">
+    <!-- Hlavička sekce s názvem a dekorativním obrázkem -->
+    <div class="section__header">
+      <h2>Sport a zábava</h2>
+      <div class="section__img">
+        <img src="media/element.png" alt="Obrázek na bloku">
+      </div>
+    </div>
+    <!-- Mřížka s kartami aktivit -->
+    <div class="sport-grid">
+      <!-- Aktivita 1: Venkovní bazén -->
+      <div class="sport-card fade-in">
+        <div class="sport-card__overlay">
+          <h3 class="sport-card__title">Bazén</h3>
+          <img src="media/bazen.jpg" alt="Venkovní bazén" class="sport-card__img">
+          <div class="sport-card__content">
+            <p>Užijte si relaxaci u našeho infinity bazénu s výhledem na moře.</p>
+            <div class="sport-info">
+              <span><i class="fas fa-swimmer"></i> Infinity bazén</span>
+              <span><i class="fas fa-clock"></i> 8:00–20:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Aktivita 2: Fitness centrum -->
+      <div class="sport-card fade-in">
+        <div class="sport-card__overlay">
+          <h3 class="sport-card__title">Fitness</h3>
+          <img src="media/fitko.jpg" alt="Fitness centrum" class="sport-card__img">
+          <div class="sport-card__content">
+            <p>Moderní posilovna s profesionálním vybavením pro váš trénink.</p>
+            <div class="sport-info">
+              <span><i class="fas fa-dumbbell"></i> Posilovna</span>
+              <span><i class="fas fa-clock"></i> 6:00–22:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Aktivita 3: Večerní programy -->
+      <div class="sport-card fade-in">
+        <div class="sport-card__overlay">
+          <h3 class="sport-card__title">Programy</h3>
+          <img src="media/programy.webp" alt="Večerní programy" class="sport-card__img">
+          <div class="sport-card__content">
+            <p>Živá hudba, taneční večery a tematické akce pro všechny věkové kategorie.</p>
+            <div class="sport-info">
+              <span><i class="fas fa-music"></i> Živá hudba</span>
+              <span><i class="fas fa-clock"></i> 20:00–23:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Aktivita 4: Dětský klub -->
+      <div class="sport-card fade-in">
+        <div class="sport-card__overlay">
+          <h3 class="sport-card__title">Klubík</h3>
+          <img src="media/klubik.webp" alt="Dětský klub" class="sport-card__img">
+          <div class="sport-card__content">
+            <p>Zábavné aktivity pro děti pod dohledem zkušených animátorů.</p>
+            <div class="sport-info">
+              <span><i class="fas fa-child"></i> Pro děti 4–12 let</span>
+              <span><i class="fas fa-clock"></i> 9:00–17:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sekce recenzí -->
+  <section id="recenze" class="section">
+    <!-- Hlavička sekce s názvem a dekorativním obrázkem -->
+    <div class="section__header">
+      <h2>Recenze pobytu</h2>
+      <div class="section__img">
+        <img src="media/element.png" alt="Obrázek na bloku">
+      </div>
+    </div>
+    <!-- Seznam recenzí -->
+    <div class="reviews">
+      <!-- Recenze 1 -->
+      <div class="review-card">
+        <div class="review-header">
+          <img src="media/recenze2.jpg" alt="Host 1" class="review-avatar">
+          <div class="review-info">
+            <h3>Jana Nováková</h3>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+        <p class="review-text">"Ubytování bylo skvělé! Pokoj byl prostorný a čistý, personál velmi přátelský. Určitě se vrátím!"</p>
+      </div>
+      <!-- Recenze 2 -->
+      <div class="review-card">
+        <div class="review-header">
+          <img src="media/recenze.jpg" alt="Host 2" class="review-avatar">
+          <div class="review-info">
+            <h3>Petr Kovar</h3>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+        <p class="review-text">"Pokoj s výhledem na moře byl naprosto úchvatný. Snídaně byla bohatá a chutná, ale mohli by nabídnout více veganských možností."</p>
+      </div>
+      <!-- Recenze 3 -->
+      <div class="review-card">
+        <div class="review-header">
+          <img src="media/recenze4.jpg" alt="Host 3" class="review-avatar">
+          <div class="review-info">
+            <h3>Martin Blark</h3>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <p class="review-text">"Perfektní místo pro rodinnou dovolenou. Personál se postaral o každý detail a vše probíhalo hladce. Doporučuji!"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sekce rezervace -->
+  <section id="rezervace" class="section">
+    <!-- Hlavička sekce s názvem a dekorativním obrázkem -->
+    <div class="section__header">
+      <h2>Rezervace pobytu</h2>
+      <div class="section__img">
+        <img src="media/element.png" alt="Obrázek na bloku">
+      </div>
+    </div>
+    <!-- Rezervační formulář -->
+    <form class="rezervacni-formular">
+      <div class="form-group">
+        <label for="jmeno">Jméno</label>
+        <input type="text" id="jmeno" name="jmeno" required>
+      </div>
+      <div class="form-group">
+        <label for="prijmeni">Příjmení</label>
+        <input type="text" id="prijmeni" name="prijmeni" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="telefon">Telefon</label>
+        <input type="tel" id="telefon" name="telefon">
+      </div>
+      <div class="form-group">
+        <label for="checkin">Datum příjezdu</label>
+        <input type="date" id="checkin" name="checkin" required>
+      </div>
+      <div class="form-group">
+        <label for="checkout">Datum odjezdu</label>
+        <input type="date" id="checkout" name="checkout" required>
+      </div>
+      <div class="form-group">
+        <label for="osoby">Počet osob</label>
+        <input type="number" id="osoby" name="osoby" min="1" max="10" required>
+      </div>
+      <div class="form-group">
+        <label for="pokoj">Typ pokoje</label>
+        <!-- Výběr typu pokoje s cenami a odkazy na obrázky -->
+        <select id="pokoj" name="pokoj" required>
+          <option value="" disabled selected>Vyberte pokoj</option>
+          <!-- Klasické pokoje -->
+          <option value="standard" data-price="2540" data-img="../media/placeholder1.jpeg">
+            Standard (2540 Kč/noc)
+          </option>
+          <option value="standard-plus" data-price="2540" data-img="../media/placeholder2.jpg">
+            Standard+ (2540 Kč/noc)
+          </option>
+          <option value="mid" data-price="2540" data-img="../media/placeholder1.jpeg">
+            Chek-inMid (2540 Kč/noc)
+          </option>
+          <option value="mid-plus" data-price="2540" data-img="../media/placeholder2.jpg">
+            Mid+ (2540 Kč/noc)
+          </option>
+          <!-- Prémiové pokoje -->
+          <option value="junior-suite" data-price="4000" data-img="../media/placeholder1.jpeg">
+            Junior Suite (4000 Kč/noc)
+          </option>
+          <option value="deluxe-suite" data-price="6000" data-img="../media/placeholder2.jpg">
+            Deluxe Suite (6000 Kč/noc)
+          </option>
+          <option value="deluxe-plus" data-price="6690" data-img="../media/placeholder1.jpeg">
+            Deluxe+ (6690 Kč/noc)
+          </option>
+          <option value="presidential" data-price="10500" data-img="../media/placeholder2.jpg">
+            Presidential (10 500 Kč/noc)
+          </option>
+          <option value="luxury" data-price="7000" data-img="../media/placeholder1.jpeg">
+            Luxury (7000 Kč/noc)
+          </option>
+          <option value="luxury-plus" data-price="7790" data-img="../media/placeholder2.jpg">
+            Luxury+ (7790 Kč/noc)
+          </option>
+        </select>
+      </div>
+      <!-- Zobrazení celkové ceny a počtu nocí -->
+      <div class="price-display" id="price-display">
+        <p>Celková cena: <span id="total-price">0 Kč</span></p>
+        <p>Počet nocí: <span id="nights">0</span></p>
+      </div>
+      <!-- Tlačítko pro odeslání rezervace -->
+      <button type="submit" class="btn">Odeslat rezervaci</button>
+    </form>
+  </section>
+
+  <!-- Sekce kontaktu -->
+  <section id="kontakt" class="section">
+    <!-- Hlavička sekce s názvem -->
+    <div class="section__header">
+      <h2>Kontaktujte nás</h2>
+    </div>
+    <!-- Kontaktní informace -->
+    <div class="kontakt-wrapper">
+      <!-- Blok s adresou -->
+      <div class="kontakt-block">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <h4>Adresa</h4>
+          <p>Ul. Luje Adamovića 31,<br>52210, Rovinj, Croatia</p>
+        </div>
+      </div>
+      <!-- Blok s telefonním číslem -->
+      <div class="kontakt-block">
+        <i class="fas fa-phone-alt"></i>
+        <div>
+          <h4>Telefon</h4>
+          <p>+420 123 456 789</p>
+        </div>
+      </div>
+      <!-- Blok s emailem -->
+      <div class="kontakt-block">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <h4>Email</h4>
+          <p>info@konoha-hotels.cz</p>
+        </div>
+      </div>
+    </div>
+    <!-- Mapa s polohou hotelu -->
+    <div class="kontakt-map">
+      <iframe
+        src="https://www.google.com/maps?q=Ul.+Luje+Adamovi%C4%87a+31,+52210,+Rovinj,+Croatia&output=embed"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Patička stránky -->
+  <footer class="footer">
+    <div class="footer__container">
+      <!-- Navigační odkazy v patičce -->
+      <div class="footer__links">
+        <h4>Navigace</h4>
+        <ul>
+          <li><a href="#subheader">Domů</a></li>
+          <li><a href="#pokoje">Ubytování</a></li>
+          <li><a href="#restaurants">Restaurace a bary</a></li>
+          <li><a href="#sport">Sport a zábava</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#rezervace">Rezervovat</a></li>
+        </ul>
+      </div>
+      <!-- Kontaktní informace v patičce -->
+      <div class="footer__contact">
+        <h4>Kontakt</h4>
+        <p>Email: <a href="mailto:info@konoha-hotels.cz">info@konoha-hotels.cz</a></p>
+        <p>Telefon: +420 123 456 789</p>
+      </div>
+      <!-- Odkazy na sociální sítě -->
+      <div class="footer__social">
+        <h4>Sledujte nás</h4>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    <!-- Copyright v dolní části patičky -->
+    <div class="footer__bottom">
+      <p>© 2025 Konoha Hotel. Všechna práva vyhrazena.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
